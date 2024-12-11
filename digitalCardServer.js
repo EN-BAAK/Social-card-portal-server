@@ -34,8 +34,6 @@ app.use((req, res, next) => {
   }
 });
 
-app.use('/hello', (req, res) => res.send('world'))
-
 app.use("/api/auth", routerAuth);
 app.use("/api/customers", routerCustomers);
 app.use("/api/medias", routerSocialMedias);

@@ -51,7 +51,13 @@ https://github.com/EN-BAAK
 5. Navigate to the environment variables file: `cd ../.env`
 6. Add dependencies
 7. Install dependencies using `npm install`
-8. To start:
+8. In your database, run the following command:
+    ```sql
+      INSERT INTO users (fullName, password, phone) 
+      VALUES ('Admin', '$2a$10$Mg30BfcdCGAsuOepJasjr.VLtC3jZuTuRxqIX.O2g3jhI9xePzy06', '123');
+    ```
+    **Note:** The password here is `123`.
+9. To start:
 
 - Start the server using `npm start` in the server folder
 - Start with frontend:
