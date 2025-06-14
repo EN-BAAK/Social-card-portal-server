@@ -18,10 +18,6 @@ const SocialMediaModel = (sequelize, modelName) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      name_he: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
       img: {
         type: DataTypes.TEXT("long"),
         allowNull: false,

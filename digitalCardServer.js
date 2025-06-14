@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const dotenv = require("dotenv");
+require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const routerAuth = require("./routers/auth");
 const routerCustomers = require("./routers/customers");
@@ -10,7 +10,6 @@ const path = require("path");
 
 const app = express();
 
-dotenv.config();
 app.use(cookieParser());
 app.use(
   cors({

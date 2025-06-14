@@ -14,10 +14,10 @@ const getAllSocialMedias = async (req, res) => {
 };
 
 const createSocialMediaItem = async (req, res) => {
-  const { name_en, name_ar, name_he, show_link } = req.body;
+  const { name_en, name_ar, show_link } = req.body;
 
   try {
-    if (!name_en || !name_ar || !name_he || show_link == undefined || !req.file)
+    if (!name_en || !name_ar || show_link == undefined || !req.file)
       return res.status(400).json({ msg: "Please enter all fields" });
 
     const img = req.file.buffer.toString("base64");
@@ -25,7 +25,6 @@ const createSocialMediaItem = async (req, res) => {
     const newMedia = await SocialMedias.create({
       name_en,
       name_ar,
-      name_he,
       show_link,
       img,
     });
@@ -41,7 +40,7 @@ const createSocialMediaItem = async (req, res) => {
 
 const editSocialMediaItem = async (req, res) => {
   const mediaId = req.params.id;
-  const { name_en, name_ar, name_he, show_link } = req.body;
+  const { name_en, name_ar, show_link } = req.body;
 
   try {
     const img = req.file ? req.file.buffer.toString("base64") : null;
@@ -54,7 +53,6 @@ const editSocialMediaItem = async (req, res) => {
 
     media.name_en = name_en;
     media.name_ar = name_ar;
-    media.name_he = name_he;
     media.show_link = show_link;
     media.img = img || media.img;
 

@@ -53,8 +53,8 @@ https://github.com/EN-BAAK
 7. Install dependencies using `npm install`
 8. In your database, run the following command:
     ```sql
-      INSERT INTO users (fullName, password, phone) 
-      VALUES ('Admin', '$2a$10$Mg30BfcdCGAsuOepJasjr.VLtC3jZuTuRxqIX.O2g3jhI9xePzy06', '123');
+      INSERT INTO users (fullName, password, company_name, phone, link, createdAt, updatedAt) 
+      VALUES ('Admin', '$2a$10$Mg30BfcdCGAsuOepJasjr.VLtC3jZuTuRxqIX.O2g3jhI9xePzy06', "My company", '123456789', "my_link", NOW(), NOW());
     ```
     **Note:** The password here is `123`.
 9. To start:

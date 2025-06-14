@@ -57,9 +57,7 @@ const getCustomerByDomainName = async (req, res) => {
     const languageField =
       customer.language === "ar"
         ? "name_ar"
-        : customer.language === "en"
-        ? "name_en"
-        : "name_he";
+        : "name_en"
 
     const links = await Links.findAll({
       where: { customerId: customer.id },

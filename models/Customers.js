@@ -70,7 +70,7 @@ const CustomersModel = (sequelize, modelName) => {
       language: {
         type: DataTypes.STRING(2),
         validate: {
-          isIn: [["ar", "en", "he"]],
+          isIn: [["ar", "en"]],
           len: [2],
         },
         allowNull: false,
